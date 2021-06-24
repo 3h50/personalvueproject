@@ -17,6 +17,10 @@ app.use('/companies', companyRoutes)
 const boatRoutes = require('./controllers/boat.controller');
 app.use('/boats', boatRoutes)
 
+const logRoutes = require('./controllers/log.controller');
+app.use('/logs', logRoutes)
+
+
 const mongoose = require('mongoose');
 
 mongoose.connect(source, {
