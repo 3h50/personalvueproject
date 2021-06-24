@@ -49,6 +49,10 @@ const photoSchema = new Schema({
 const logSchema = new Schema({
     title: {type: String, required: true},
     captainsLog: {type: String, required: true},
+    author: {
+        type:[mongoose.Schema.Types.ObjectId],
+        ref: 'User',
+    },
     flag: {type: String, required: true},
     rating:{type: String},
     photos: {type: [photoSchema]},
