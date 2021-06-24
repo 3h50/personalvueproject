@@ -21,7 +21,7 @@ router.route('/addUser/:id').put((req, res) => {
     Company.updateOne({
         _id: req.params.id
       }, {
-        $push: {
+        $addToSet: {
           users: req.body.id
         }
       }).then(allCompanies => res.json(allCompanies))

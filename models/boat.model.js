@@ -50,6 +50,7 @@ const logSchema = new Schema({
     title: {type: String, required: true},
     captainsLog: {type: String, required: true},
     flag: {type: String, required: true},
+    rating:{type: String},
     photos: {type: [photoSchema]},
     travelPoints: {type: [travelPointSchema], required: true} 
 })
@@ -63,6 +64,7 @@ const ownerSchema = new Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref: 'Company',
         required: true,
+        unique: true
     }
 })
 
@@ -83,7 +85,8 @@ const boatSchema = new Schema({
     },
     overhaulDates: {type: [Date]},
     owners: {
-        type:[ownerSchema]
+        type:[ownerSchema],
+        "_id" : false
     },
     logs: {
         type: [logSchema]
