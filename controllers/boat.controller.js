@@ -22,4 +22,23 @@ router.route('/update/:id').put((req, res) => {
         .catch(err => res.status(400).json('Error! ' + err))
 })
 
+router.route('/company').put((req, res)=>{
+    console.log("Attempting to add a Company to a Boat")
+    // Boat.findOneAndUpdate(
+    //     { _id: req.body.id }, 
+    //     { $push: { owners: objFriends  } },
+    //    function (error, success) {
+    //          if (error) {
+    //              console.log(error);
+    //          } else {
+    //              console.log(success);
+    //          }
+    //      });
+    //  )
+    // const addCompany = new Boat(req.body);
+    // addCompany.save()
+        .then(boat=>res.json(boat))
+        .catch(err=>res.status(400).json("Error!" + err))
+});
+
 module.exports = router;

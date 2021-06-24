@@ -72,7 +72,7 @@ const boatSchema = new Schema({
         required: true
     },
     photoLoc: String,
-    brand: {
+    make: {
         type: String, required: true
     },
     model: {

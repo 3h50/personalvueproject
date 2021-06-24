@@ -1,3 +1,4 @@
+const { receiveMessageOnPort } = require('worker_threads');
 const Company = require('../models/company.model');
 const router = require('express').Router();
 
@@ -16,10 +17,15 @@ router.route('/').get((req, res) => {
         .catch(err => res.status(400).json('Error! ' + err))
 })
 
-router.route('/update/:id').put((req, res) => {
-    Company.findByIdAndUpdate(req.params.id, req.body)
-        .then(company => res.json('Success! Company updated.'))
-        .catch(err => res.status(400).json('Error! ' + err))
+router.route('/addUser/:id').put((req, res) => {
+    Company.updateOne({
+        _id: req.params.id
+      }, {
+        $push: {
+          users: req.body.id
+        }
+      }).then(allCompanies => res.json(allCompanies))
+      .catch(err => res.status(400).json('Error! ' + err))
 })
 
 module.exports = router;
