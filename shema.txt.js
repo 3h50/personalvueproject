@@ -41,22 +41,22 @@
 //     text: "This is how you could leave a comment on an area of a photo such as here is the damn hose thing."
 // }
 
-let boat = {
-    name: "MyGirl",
-    photoLoc: "wasabiBucket",
-    brand: "Fountain",
-    model: "2345",
-    length: "55",
-    overhaulDates:[
-        date
-    ],
-    owners:[
-        owner
-    ],
-    logs:[
-        log
-    ]
-}
+// let boat = {
+//     name: "MyGirl",
+//     photoLoc: "wasabiBucket",
+//     brand: "Fountain",
+//     model: "2345",
+//     length: "55",
+//     overhaulDates:[
+//         date
+//     ],
+//     owners:[
+//         owner
+//     ],
+//     logs:[
+//         log
+//     ]
+// }
 
 // let owner= {
 //     startDate: "Date",

@@ -9,10 +9,10 @@ const companySchema = new Schema({
     country: {type: String, required: true},
     phone: {type: String, required: true},
     email: {type: String, required: true, unique: true, match: /.+\@.+\..+/,},
-    users: [{
-        type:mongoose.Schema.Types.ObjectId,
+    users: {
+        type:[mongoose.Schema.Types.ObjectId],
         ref: 'User'
-    }]
+    }
 })
 
 const Company = mongoose.model('Company', companySchema);
