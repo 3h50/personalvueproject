@@ -1,45 +1,45 @@
-let log = {
-    title : "Short Jaunt",
-    captLog: "the long texty shit about the trip",
-    flag:"USVI",
+// let log = {
+//     title : "Short Jaunt",
+//     captLog: "the long texty shit about the trip",
+//     flag:"USVI",
 
-    photos: [
-        photo
-    ],
-    points : [
-        point
-    ]
-}
+//     photos: [
+//         photo
+//     ],
+//     points : [
+//         point
+//     ]
+// }
 
-let point = {
-    title : "Stop",
-    date:  "Some Date",
-    desription: "Some text about why we stopped or what happened",
-    location
-}
+// let point = {
+//     title : "Stop",
+//     date:  "Some Date",
+//     desription: "Some text about why we stopped or what happened",
+//     location
+// }
 
-let photo = {
-    title : "Shark",
-    geoLocation: "",
-    fileLocation : "s3 Bucket",
-    regionCaption: [
-        {
-            regionCaption
-        },
-    ]
-}
+// let photo = {
+//     title : "Shark",
+//     geoLocation: "",
+//     fileLocation : "s3 Bucket",
+//     regionCaption: [
+//         {
+//             regionCaption
+//         },
+//     ]
+// }
 
-let location = {
-    geoJSON : {
+// let location = {
+//     geoJSON : {
 
-    }
-}
+//     }
+// }
 
-let regionCaption = {
-    x: "100",
-    y: "60",
-    text: "This is how you could leave a comment on an area of a photo such as here is the damn hose thing."
-}
+// let regionCaption = {
+//     x: "100",
+//     y: "60",
+//     text: "This is how you could leave a comment on an area of a photo such as here is the damn hose thing."
+// }
 
 let boat = {
     name: "MyGirl",
@@ -58,10 +58,10 @@ let boat = {
     ]
 }
 
-let owner= {
-    startDate: "Date",
-    company: company,
-}
+// let owner= {
+//     startDate: "Date",
+//     company: company,
+// }
 
 // let user = {
 //     userName: "MrArmyAnt",
