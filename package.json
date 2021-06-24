@@ -1,0 +1,23 @@
+{
+  "name": "captpassdownbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "shema.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrarmyant/captpassdownbackend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrarmyant/captpassdownbackend/issues"
+  },
+  "homepage": "https://github.com/mrarmyant/captpassdownbackend#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^5.12.14"
+  }
+}
