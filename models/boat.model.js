@@ -1,10 +1,17 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const waypointStyleSchema = new Schema({
+    name: {type: String, default : "waymarker", required: true},
+    icon: {type:String, default: "marker", require: true},
+    data: {type: Object}
+})
+
 const waypointSchema = new Schema({
     title: {type: String, required: true},
     date: {type: Date, required: true},
     description: {type: String, required: true},
+    style: {type: waypointStyleSchema, required: true},
     location: {
         type: {
             type: String,
@@ -26,36 +33,17 @@ const xyCaptionSchema = new Schema({
     y: {type:Number, required: true}
 })
 
-const photoSchema = new Schema({
-    title: {type: String, required: true},
-    date: {type: Date},
-    description: {type: String, required: true},
-    photoLoc: {type: String, required: true},
-    location: {
-        type: {
-            type: String,
-            default: 'Point,'
-        },
-        coordinates: {
-            type: [Number],
-            required: true
-          },
-    },
-    xyCaptions: {
-        type: [xyCaptionSchema]
-    }
-})
-
 const logSchema = new Schema({
     title: {type: String, required: true},
-    captainsLog: {type: String, required: true},
+    skippersBrief: {type: String, required: true},
+    captainsLog: {type: String},
     author: {
         type:mongoose.Schema.Types.ObjectId,
         ref: 'User',
+        required: true
     },
-    flag: {type: String, required: true},
+    flag: {type: String},
     rating:{type: String},
-    photos: {type: [photoSchema]},
     waypoints: {type: [waypointSchema], required: true} 
 })
 
