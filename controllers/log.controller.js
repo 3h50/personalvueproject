@@ -61,16 +61,15 @@ router.route('/photos/:id').post((req, res)=>{
 });
 
 router.route('/photos/:id').put((req, res)=>{
-  console.log("Attempting to add photo to a Log to a Boat")
+  console.log("Attempting to update photo to a Log to a Boat")
   console.log(req.body)
-  Boat.updateOne({
+  Boat.findOneAndUpdate({
                 _id: req.params.id,
-                "logs._id": req.body.logID
-              }, {
-                $addToSet: {
-                  "logs.$[].photos": req.body.photo
-                }
-              }).then(boat => res.json(boat))
+                "logs._id": req.body.logID,
+                "photos._id" : req.body.photoID
+              }, {$set: {'logs.photos' :req.body.photo}}
+              , {new: true, useFindAndModify:false})
+              .then(boat => res.json(boat))
               .catch(err => res.status(400).json('Error! ' + err))
 });
 

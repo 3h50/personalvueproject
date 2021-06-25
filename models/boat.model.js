@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const travelPointSchema = new Schema({
+const waypointSchema = new Schema({
     title: {type: String, required: true},
     date: {type: Date, required: true},
     description: {type: String, required: true},
@@ -50,13 +50,13 @@ const logSchema = new Schema({
     title: {type: String, required: true},
     captainsLog: {type: String, required: true},
     author: {
-        type:[mongoose.Schema.Types.ObjectId],
+        type:mongoose.Schema.Types.ObjectId,
         ref: 'User',
     },
     flag: {type: String, required: true},
     rating:{type: String},
     photos: {type: [photoSchema]},
-    travelPoints: {type: [travelPointSchema], required: true} 
+    waypoints: {type: [waypointSchema], required: true} 
 })
 
 const ownerSchema = new Schema({
@@ -86,6 +86,9 @@ const boatSchema = new Schema({
     },
     length: {
         type: String, required: true
+    },
+    year: {
+        type: Number, required: true
     },
     overhaulDates: {type: [Date]},
     owners: {
