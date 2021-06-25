@@ -1,53 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const waypointStyleSchema = new Schema({
-    name: { type: String, default: "waymarker", required: true },
-    icon: { type: String, default: "marker", require: true },
-    data: { type: Object }
-})
-
-const waypointSchema = new Schema({
-    title: { type: String, required: true },
-    date: { type: Date, required: true },
-    description: { type: String, required: true },
-    style: { type: waypointStyleSchema, required: true },
-    location: {
-        type: {
-            type: String,
-            default: 'Point,'
-        },
-        coordinates: {
-            type: [Number],
-            default: undefined,
-            required: true
-        },
-    }
-})
-
-const xyCaptionSchema = new Schema({
-    title: { type: String, required: true },
-    description: { type: String },
-    style: { type: String, default: 'dot' },
-    x: { type: Number, required: true },
-    y: { type: Number, required: true }
-})
-
-const logSchema = new Schema({
-    title: { type: String, required: true },
-    skippersBrief: { type: String, required: true },
-    captainsLog: { type: String },
-    author: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
-    flag: { type: String },
-    rating: { type: String },
-    waypoints: { type: [waypointSchema], required: true }
-})
-
-const ownerSchema = new Schema({
+const companySchema = new Schema({
     date: {
         type: Date,
         required: true
@@ -57,6 +11,21 @@ const ownerSchema = new Schema({
         ref: 'Company',
         required: true,
         unique: true
+    }
+})
+
+const ownerSchema = new Schema({
+    date: {
+        type: Date,
+        required: true
+    },
+    type: {
+        type: String,
+        required: true
+    },
+    id: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
     }
 })
 
@@ -84,10 +53,9 @@ const boatSchema = new Schema({
     overhaulDates: { type: [Date] },
     owners: {
         type: [ownerSchema],
-        "_id": false
     },
-    logs: {
-        type: [logSchema]
+    companies: {
+        type: [companySchema],
     }
 })
 
