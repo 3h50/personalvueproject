@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const waypointStyleSchema = new Schema({
-    name: {type: String, default : "waymarker", required: true},
-    icon: {type:String, default: "marker", require: true},
-    data: {type: Object}
+    name: { type: String, default: "waymarker", required: true },
+    icon: { type: String, default: "marker", require: true },
+    data: { type: Object }
 })
 
 const waypointSchema = new Schema({
-    title: {type: String, required: true},
-    date: {type: Date, required: true},
-    description: {type: String, required: true},
-    style: {type: waypointStyleSchema, required: true},
+    title: { type: String, required: true },
+    date: { type: Date, required: true },
+    description: { type: String, required: true },
+    style: { type: waypointStyleSchema, required: true },
     location: {
         type: {
             type: String,
@@ -21,39 +21,39 @@ const waypointSchema = new Schema({
             type: [Number],
             default: undefined,
             required: true
-          },
+        },
     }
 })
 
 const xyCaptionSchema = new Schema({
-    title: {type: String, required: true},
-    description: {type: String},
-    style: {type: String, default : 'dot'},
-    x: {type:Number, required: true},
-    y: {type:Number, required: true}
+    title: { type: String, required: true },
+    description: { type: String },
+    style: { type: String, default: 'dot' },
+    x: { type: Number, required: true },
+    y: { type: Number, required: true }
 })
 
 const logSchema = new Schema({
-    title: {type: String, required: true},
-    skippersBrief: {type: String, required: true},
-    captainsLog: {type: String},
+    title: { type: String, required: true },
+    skippersBrief: { type: String, required: true },
+    captainsLog: { type: String },
     author: {
-        type:mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    flag: {type: String},
-    rating:{type: String},
-    waypoints: {type: [waypointSchema], required: true} 
+    flag: { type: String },
+    rating: { type: String },
+    waypoints: { type: [waypointSchema], required: true }
 })
 
 const ownerSchema = new Schema({
     date: {
-        type: Date, 
+        type: Date,
         required: true
     },
-    company : {
-        type:mongoose.Schema.Types.ObjectId,
+    company: {
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Company',
         required: true,
         unique: true
@@ -62,7 +62,7 @@ const ownerSchema = new Schema({
 
 const boatSchema = new Schema({
     name: {
-        type: String, 
+        type: String,
         required: true
     },
     photoLoc: String,
@@ -81,10 +81,10 @@ const boatSchema = new Schema({
     year: {
         type: Number, required: true
     },
-    overhaulDates: {type: [Date]},
+    overhaulDates: { type: [Date] },
     owners: {
-        type:[ownerSchema],
-        "_id" : false
+        type: [ownerSchema],
+        "_id": false
     },
     logs: {
         type: [logSchema]
