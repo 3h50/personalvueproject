@@ -60,21 +60,22 @@ router.route('/waypoints/new').post((req, res) => {
     .catch(err => res.status(400).json('Error! ' + err))
 });
 
-//UPDATE A WAYPOINT ON A LOG ON A BOAT WITHOUT FCKING UP THE REST
-router.route('/waypoints/:id').put((req, res) => {
-  console.log("Attempting to update waypoint to a Log to a Log")
+//UPDATE A WAYPOINT ON A LOG
+//is overwriting whole object, needs to read in existing expand update and rewrite
+router.route('/:id/waypoints').put((req, res) => {
+  console.log("Attempting to update waypoint to a Log")
   const filter = {
     _id: req.params.id
   }
   const action = {
     $set: {
-      'logs.$[log].waypoints.$[waypoint]': req.body.waypoint
+      'waypoints.$[waypoint]': req.body.waypoint
     }
   }
   const options = {
     new: true,
     useFindAndModify: false,
-    arrayFilters: [{ 'log._id': req.body.logID }, { 'waypoint._id': req.body.waypointID }]
+    arrayFilters: [{ 'waypoint._id': req.body.waypointID }]
   }
 
   Log.updateOne(filter, action, options)
