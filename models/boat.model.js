@@ -87,6 +87,9 @@ const boatSchema = new Schema({
     length: {
         type: String, required: true
     },
+    serial: {
+        type: String
+    },
     year: {
         type: Number, required: true
     },
