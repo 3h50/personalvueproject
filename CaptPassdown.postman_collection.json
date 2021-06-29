@@ -1,0 +1,329 @@
+{
+	"info": {
+		"_postman_id": "5b4d6fe8-6a02-4d2b-9ca5-8f961e896a77",
+		"name": "CaptPassdown",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "newUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userName\":\"MrArmyAnt\",\r\n    \"firstName\":\"Taylor\",\r\n    \"lastName\":\"Fry\",\r\n    \"email\":\"taylor.fry@fryco.com\",\r\n    \"country\":\"USA\",\r\n    \"locale\":\"CST\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}users/new",
+					"host": [
+						"{{url}}users"
+					],
+					"path": [
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}companies/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Bob's Boats\",\r\n    \"street\":\"156 Bay Front\",\r\n    \"city\":\"Kemah\",\r\n    \"country\":\"USA\",\r\n    \"email\":\"taylor.fry@fryco.com\",\r\n    \"phone\":\"9728004905\",\r\n    \"users\": [\r\n        \"60d4b44a4658b063648d169e\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}companies/new",
+					"host": [
+						"{{url}}companies"
+					],
+					"path": [
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}boats/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Marinetta\",\r\n    \"make\":\"Catalina\",\r\n    \"model\":\"sea\",\r\n    \"length\":\"25ft\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}boats/new",
+					"host": [
+						"{{url}}boats"
+					],
+					"path": [
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}companies/60d4d12d516fc829bcca55f4",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"60d4eace59e8cf1f5c2e563d\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}companies/addUser/60d4d12d516fc829bcca55f4",
+					"host": [
+						"{{url}}companies"
+					],
+					"path": [
+						"addUser",
+						"60d4d12d516fc829bcca55f4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}boats/addcompany/60d4df88b1e1c63b34157c9d",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2002-12-09\",\r\n    \"company\": \"60d4d12d516fc829bcca55f4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}boats/company/60d4df88b1e1c63b34157c9d",
+					"host": [
+						"{{url}}boats"
+					],
+					"path": [
+						"company",
+						"60d4df88b1e1c63b34157c9d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}boats/overhaul/60d4df88b1e1c63b34157c9d",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"date\": \"2002-12-09\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}boats/overhaul/60d4df88b1e1c63b34157c9d",
+					"host": [
+						"{{url}}boats"
+					],
+					"path": [
+						"overhaul",
+						"60d4df88b1e1c63b34157c9d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logs/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"does it double?\",\r\n    \"boat\": \"60d4df88b1e1c63b34157c9d\",\r\n    \"skippersBrief\": \"This is the raw details for people like Scuba Kev\",\r\n    \"captainsLog\": \"This is where all the bullshit about my whining and stuff would go.\",\r\n    \"author\": \"60d4eace59e8cf1f5c2e563d\",\r\n    \"flag\": \"USA\",\r\n    \"waypoints\": [\r\n        {\r\n            \"title\": \"start\",\r\n            \"date\": \"2010-9-13\",\r\n            \"description\": \"this is where we started the trip\",\r\n            \"style\": {},\r\n            \"location\": {\r\n                \"type\": \"Point\",\r\n                \"coordinates\": [\r\n                    -96.78852081298828,\r\n                    32.78859137762417\r\n                ]\r\n            }\r\n        },\r\n        {\r\n            \"title\": \"photo5\",\r\n            \"date\": \"2110-9-13\",\r\n            \"description\": \"a lovely friggen sunrise\",\r\n            \"photoLoc\": \"asdasdasdfa.jpg\",\r\n            \"location\": {\r\n                \"type\": \"Point\",\r\n                \"coordinates\": [\r\n                    -96.78852081298828,\r\n                    32.78859137762417\r\n                ]\r\n            },\r\n            \"style\": {\r\n                \"name\": \"photo\",\r\n                \"icon\": \"camera\",\r\n                \"data\": {\r\n                    \"imageLoc\": \"asdasd.jpg\",\r\n                    \"xyComments\": [\r\n                        {\r\n                            \"title\": \"A spot on a Photo.\",\r\n                            \"description\": \"These are details about why this spot on the photo is important\",\r\n                            \"icon\": \"marker\",\r\n                            \"coordinates\": [\r\n                                20,\r\n                                50\r\n                            ]\r\n                        }\r\n                    ]\r\n                }\r\n            }\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}logs/new",
+					"host": [
+						"{{url}}logs"
+					],
+					"path": [
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}logs/60d4df88b1e1c63b34157c9d",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}logs/delete/60d63f9fe35f6456680a626a",
+					"host": [
+						"{{url}}logs"
+					],
+					"path": [
+						"delete",
+						"60d63f9fe35f6456680a626a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logs/{_id}/waypoints/",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"logID\" : \"60d5e8f765fd171dc421816e\",\r\n    \"waypointID\" : \"60d603d0cb8e2733845f9796\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}logs/waypoints/60d4df88b1e1c63b34157c9d",
+					"host": [
+						"{{url}}logs"
+					],
+					"path": [
+						"waypoints",
+						"60d4df88b1e1c63b34157c9d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logs/waypoints/new",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"logID\": \"60d51b62a00f9b13e0735858\",\r\n    \"waypoint\": {\r\n        \"title\": \"photo42\",\r\n        \"date\": \"2000-9-13\",\r\n        \"description\": \"a dolphin\",\r\n        \"photoLoc\": \"asdasdasdfa.jpg\",\r\n        \"location\": {\r\n            \"type\": \"Point\",\r\n            \"coordinates\": [\r\n                -96.78852081298828,\r\n                32.78859137762417\r\n            ]\r\n        },\r\n        \"style\": {\r\n            \"name\": \"photo\",\r\n            \"icon\": \"camera\",\r\n            \"data\": {\r\n                \"imageLoc\": \"asdasd.jpg\",\r\n                \"xyComments\" : [\r\n                    {\r\n                        \"title\" : \"A spot on a Photo.\",\r\n                        \"description\" : \"These are details about why this spot on the photo is important\",\r\n                        \"icon\" : \"marker\",\r\n                        \"coordinates\" : [\r\n                            20,\r\n                            50\r\n                        ]\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}logs/waypoints/60d4df88b1e1c63b34157c9d",
+					"host": [
+						"{{url}}logs"
+					],
+					"path": [
+						"waypoints",
+						"60d4df88b1e1c63b34157c9d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}logs/waypoints/60d4df88b1e1c63b34157c9d",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"logID\": \"60d60502cb8e2733845f979c\",\r\n    \"waypointID\" : \"60d60502cb8e2733845f979e\",\r\n    \"waypoint\": {\r\n        \"title\": \"an overwrite\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}logs/60d64425ea07f82010279c6d/waypoints/",
+					"host": [
+						"{{url}}logs"
+					],
+					"path": [
+						"60d64425ea07f82010279c6d",
+						"waypoints",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:5000"
+		}
+	]
+}
