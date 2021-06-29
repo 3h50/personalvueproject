@@ -1,36 +1,44 @@
 <template>
-  <SchemaForm :schema="mySchema" />
+  <span class="p-float-label">
+    <!-- <SchemaForm :schema="mySchema" />
+    <InputText id="inputtext" type="text" v-model="value1" />
+    <label for="inputtext">InputText</label> -->
+  </span>
 </template>
 
 <script>
 import { ref } from "vue";
 import { SchemaForm, useSchemaForm } from "formvuelate";
+import InputText from "primevue/inputtext";
 
 export default {
-  components: { SchemaForm },
+  components: {
+    SchemaForm,
+    InputText,
+  },
   setup() {
     const formModel = ref({});
     useSchemaForm(formModel);
 
     const mySchema = ref({
       name: {
-        component: FormText,
+        component: InputText,
       },
       photoLoc: {},
       make: {
-        component: FormText,
+        component: InputText,
       },
       model: {
-        component: FormText,
+        component: InputText,
       },
       length: {
-        component: FormText,
+        component: InputText,
       },
       serial: {
-        component: FormText,
+        component: InputText,
       },
       year: {
-        component: FormText,
+        component: InputText,
       },
     });
 
@@ -40,9 +48,6 @@ export default {
   },
 };
 </script>
-
-
-
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
