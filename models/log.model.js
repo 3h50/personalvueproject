@@ -59,6 +59,7 @@ const logSchema = new Schema({
     },
     skippersBrief: { type: String, required: true },
     captainsLog: { type: String },
+    tripType: { type: String },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
