@@ -14,6 +14,7 @@ const companySchema = new Schema({
     }
 })
 
+// matt what the fuck why if required is here but parent isnt does it fuck up
 const ownerSchema = new Schema({
     date: {
         type: Date,

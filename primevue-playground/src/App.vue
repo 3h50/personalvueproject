@@ -1,7 +1,7 @@
 <template>
-  <div class="p-d-flex p-flex-column p-flex-sm-row p-ai-center">
+  <div class="p-d-flex p-flex-column p-flex-md-row p-ai-center">
     <!-- Photo Loader -->
-    <div class="p-col-3">
+    <div class="p-col-12 p-md-3 p-fliud">
       <Card>
         <template #title>Upload Photo</template>
         <template #content> </template>
@@ -77,11 +77,7 @@
       </div>
 
       <div class="p-formgrid p-grid p-fluid p-px-2">
-        <Button
-          v-on:click="submitBoat"
-          label="Submit Boat"
-          disabled="{{!submitReady}}"
-        />
+        <Button v-on:click="submitBoat" label="Submit Boat" />
       </div>
     </div>
   </div>
@@ -105,13 +101,30 @@ export default {
   methods: {
     submitBoat: function () {
       let newBoatPayload = {
-        name: this.BoatName,
+        name: this.boatName,
+        make: this.make,
         model: this.model,
         loa: this.loa + this.unit,
         serial: this.hullNumber,
         year: this.year,
+        owners: {},
       };
-      console.log(JSON.stringify(newBoatPayload));
+      console.log(newBoatPayload);
+
+      fetch("http://localhost:5000/boats/new", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newBoatPayload),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log("Success:", data);
+        })
+        .catch((error) => {
+          console.error("ErrorLog:", error);
+        });
     },
   },
 };
