@@ -20,6 +20,8 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "primeicons": "^4.1.0",
+    "primevue": "^3.5.1"
   }
 }
