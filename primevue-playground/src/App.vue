@@ -9,17 +9,26 @@
         <!-- Boat Name -->
         <div class="p-field p-col-12 p-lg-6 p-mb-5">
           <span class="p-float-label">
-            <InputText id="inputtext" type="text" v-model="boatName" />
-            <label for="inputtext">Name</label>
+            <InputText id="boatName" type="text" v-model="boatName" />
+            <label for="boatName">Name</label>
           </span>
         </div>
 
         <!-- loa -->
-        <div class="p-field p-col-12 p-lg-6 p-mb-5">
-          <span class="p-float-label">
-            <InputText id="inputtext" type="text" v-model="loa" />
-            <label for="inputtext">Length (LOA)</label>
-          </span>
+
+        <div class="p-d-flex p-col-12 p-lg-6 p-mb-5">
+          <div class="p-col">
+            <span class="p-float-label">
+              <InputText id="loa" type="text" v-model="loa" />
+              <label for="loa">Length</label>
+            </span>
+          </div>
+          <div class="p-col">
+            <span class="p-float-label">
+              <Dropdown id="unit" :options="units" v-model="unit" />
+              <label for="unit">Unit</label>
+            </span>
+          </div>
         </div>
       </div>
 
@@ -27,16 +36,16 @@
         <!-- Make -->
         <div class="p-field p-col-12 p-lg-6 p-mb-5">
           <span class="p-float-label">
-            <InputText id="inputtext" type="text" v-model="make" />
-            <label for="inputtext">Make</label>
+            <InputText id="make" type="text" v-model="make" />
+            <label for="make">Make</label>
           </span>
         </div>
 
         <!-- Model -->
         <div class="p-field p-col-12 p-lg-6 p-mb-5">
           <span class="p-float-label">
-            <InputText id="inputtext" type="text" v-model="model" />
-            <label for="inputtext">Model</label>
+            <InputText id="model" type="text" v-model="model" />
+            <label for="model">Model</label>
           </span>
         </div>
       </div>
@@ -45,16 +54,16 @@
         <!-- Year -->
         <div class="p-field p-col-12 p-lg-6 p-mb-5">
           <span class="p-float-label">
-            <InputText id="inputtext" type="text" v-model="year" />
-            <label for="inputtext">Year</label>
+            <InputText id="year" type="text" v-model="year" />
+            <label for="year">Year</label>
           </span>
         </div>
 
         <!-- hull -->
         <div class="p-field p-col-12 p-lg-6 p-mb-5">
           <span class="p-float-label">
-            <InputText id="inputtext" type="text" v-model="hullNumber" />
-            <label for="inputtext">Hull Number</label>
+            <InputText id="hullNumber" type="text" v-model="hullNumber" />
+            <label for="hullNumber">Hull Number</label>
           </span>
         </div>
       </div>
@@ -72,6 +81,8 @@ export default {
       model: "",
       year: "",
       hullNumber: "",
+      unit: "",
+      units: ["ft", "m"],
     };
   },
 };
