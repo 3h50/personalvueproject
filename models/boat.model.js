@@ -41,7 +41,7 @@ const boatSchema = new Schema({
     model: {
         type: String, required: true
     },
-    length: {
+    loa: {
         type: String, required: true
     },
     serial: {

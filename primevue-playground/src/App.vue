@@ -1,7 +1,15 @@
 <template>
-  <div class="p-d-flex p-flex-column p-flex-sm-row">
+  <div class="p-d-flex p-flex-column p-flex-sm-row p-ai-center">
     <!-- Photo Loader -->
-    <div class="p-col-3">Photo Uploader</div>
+    <div class="p-col-3">
+      <Card>
+        <template #title>Upload Photo</template>
+        <template #content> </template>
+        <template #footer>
+          <Button label="Upload" />
+        </template>
+      </Card>
+    </div>
 
     <!-- FormGrid -->
     <div class="p-col-9">
@@ -14,16 +22,16 @@
           </span>
         </div>
 
+        <!-- Fix the margin issues here -->
         <!-- loa -->
-
         <div class="p-d-flex p-col-12 p-lg-6 p-mb-5">
-          <div class="p-col">
+          <div class="p-col-6 p-px-0">
             <span class="p-float-label">
               <InputText id="loa" type="text" v-model="loa" />
               <label for="loa">Length</label>
             </span>
           </div>
-          <div class="p-col">
+          <div class="p-col-6 p-pr-0">
             <span class="p-float-label">
               <Dropdown id="unit" :options="units" v-model="unit" />
               <label for="unit">Unit</label>
@@ -67,6 +75,14 @@
           </span>
         </div>
       </div>
+
+      <div class="p-formgrid p-grid p-fluid p-px-2">
+        <Button
+          v-on:click="submitBoat"
+          label="Submit Boat"
+          disabled="{{!submitReady}}"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -83,7 +99,20 @@ export default {
       hullNumber: "",
       unit: "",
       units: ["ft", "m"],
+      submitReady: false,
     };
+  },
+  methods: {
+    submitBoat: function () {
+      let newBoatPayload = {
+        name: this.BoatName,
+        model: this.model,
+        loa: this.loa + this.unit,
+        serial: this.hullNumber,
+        year: this.year,
+      };
+      console.log(JSON.stringify(newBoatPayload));
+    },
   },
 };
 </script>
