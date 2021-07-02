@@ -10,7 +10,6 @@ const companySchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Company',
         required: true,
-        unique: true
     }
 })
 
@@ -54,9 +53,11 @@ const boatSchema = new Schema({
     overhaulDates: { type: [Date] },
     owners: {
         type: [ownerSchema],
+        required: false
     },
     companies: {
         type: [companySchema],
+        required: false
     }
 })
 
