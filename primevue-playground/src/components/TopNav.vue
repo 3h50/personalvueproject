@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="p-mb-5">
     <TabMenu :model="items" />
     <router-view />
   </div>

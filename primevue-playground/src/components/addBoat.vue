@@ -15,7 +15,7 @@
     <div class="p-col-12 p-md-9">
       <div class="p-formgrid p-grid p-fluid">
         <!-- Boat Name -->
-        <div class="p-field p-col-12 p-lg-6 p-mb-5">
+        <div class="p-field p-col-12 p-sm-6 p-mb-5">
           <span class="p-float-label">
             <InputText id="boatName" type="text" v-model="boatName" />
             <label for="boatName">Name</label>
@@ -24,7 +24,7 @@
 
         <!-- Fix the margin issues here -->
         <!-- loa -->
-        <div class="p-d-flex p-col-12 p-lg-6 p-mb-5">
+        <div class="p-d-flex p-col-12 p-sm-6 p-mb-5">
           <div class="p-col-6 p-px-0">
             <span class="p-float-label">
               <InputText id="loa" type="text" v-model="loa" />
@@ -42,7 +42,7 @@
 
       <div class="p-formgrid p-grid p-fluid">
         <!-- Make -->
-        <div class="p-field p-col-12 p-lg-6 p-mb-5">
+        <div class="p-field p-col-12 p-sm-6 p-mb-5">
           <span class="p-float-label">
             <InputText id="make" type="text" v-model="make" />
             <label for="make">Make</label>
@@ -50,7 +50,7 @@
         </div>
 
         <!-- Model -->
-        <div class="p-field p-col-12 p-lg-6 p-mb-5">
+        <div class="p-field p-col-12 p-sm-6 p-mb-5">
           <span class="p-float-label">
             <InputText id="model" type="text" v-model="model" />
             <label for="model">Model</label>
@@ -60,7 +60,7 @@
 
       <div class="p-formgrid p-grid p-fluid">
         <!-- Year -->
-        <div class="p-field p-col-12 p-lg-6 p-mb-5">
+        <div class="p-field p-col-12 p-sm-6 p-mb-5">
           <span class="p-float-label">
             <InputText id="year" type="text" v-model="year" />
             <label for="year">Year</label>
@@ -68,7 +68,7 @@
         </div>
 
         <!-- hull -->
-        <div class="p-field p-col-12 p-lg-6 p-mb-5">
+        <div class="p-field p-col-12 p-sm-6 p-mb-5">
           <span class="p-float-label">
             <InputText id="hullNumber" type="text" v-model="hullNumber" />
             <label for="hullNumber">Hull Number</label>
