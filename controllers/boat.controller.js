@@ -16,10 +16,15 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json('Error! ' + err))
 })
 
-router.route('/update/:id').put((req, res) => {
-
+router.route('/:id').put((req, res) => {
   Boat.findByIdAndUpdate(req.params.id, req.body)
     .then(boat => res.json('Success! Boat updated.'))
+    .catch(err => res.status(400).json('Error! ' + err))
+})
+
+router.route('/:id').get((req, res) => {
+  Boat.findById(req.params.id, req.body)
+    .then(boat => res.json(boat))
     .catch(err => res.status(400).json('Error! ' + err))
 })
 

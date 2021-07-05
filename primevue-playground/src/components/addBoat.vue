@@ -4,9 +4,9 @@
     <div class="p-col-12 p-md-3 p-fliud p-mb-3 p-mb-md-0">
       <FileUpload
         name="boatProfilePhoto"
+        showUploadButton="false"
         url="./upload"
         accept="image/*"
-        showCancelButton="false"
         :maxFileSize="6000000"
       />
     </div>
@@ -34,7 +34,7 @@
           <div class="p-col-6 p-pr-0">
             <span class="p-float-label">
               <Dropdown id="unit" :options="units" v-model="unit" />
-              <label for="unit">Unit</label>
+              <label for="unit">Units</label>
             </span>
           </div>
         </div>
