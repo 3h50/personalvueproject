@@ -84,9 +84,13 @@
 </template>
 <script>
 export default {
-  name: "AddBoat",
+  name: "ViewBoat",
+  props: {
+    boatID: "",
+  },
   data() {
     return {
+      boatID: "",
       boatName: "",
       loa: "",
       make: "",
@@ -95,37 +99,32 @@ export default {
       hullNumber: "",
       unit: "",
       units: ["ft", "m"],
-      submitReady: false,
     };
   },
   methods: {
-    submitBoat: function () {
-      let newBoatPayload = {
-        name: this.boatName,
-        make: this.make,
-        model: this.model,
-        loa: this.loa,
-        loaUnits: this.unit,
-        serial: this.hullNumber,
-        year: this.year,
-      };
-      console.log(newBoatPayload);
-
-      fetch("http://localhost:5000/boats/new", {
-        method: "POST", // or 'PUT'
+    fetchBoat: async function (id) {
+      fetch(`http://localhost:5000/boats/${id}`, {
+        method: "GET", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newBoatPayload),
       })
         .then((response) => response.json())
-        .then((data) => {
-          console.log("Success:", data);
+        .then((res) => {
+          this.boatName = res.boatName;
+          this.loa = res.loa;
+          this.make = res.make;
+          this.model = res.model;
+          this.year = res.year;
+          this.hullNumber = res.hullNumber;
+          this.unit = res.unit;
+          this.boatProfilePhoto = res.photo;
         })
         .catch((error) => {
           console.error("ErrorLog:", error);
         });
     },
   },
+  completed() {},
 };
 </script>

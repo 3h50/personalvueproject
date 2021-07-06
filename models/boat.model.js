@@ -44,6 +44,9 @@ const boatSchema = new Schema({
     loa: {
         type: String, required: true
     },
+    loaUnits: {
+        type: String, required: true
+    },
     serial: {
         type: String
     },

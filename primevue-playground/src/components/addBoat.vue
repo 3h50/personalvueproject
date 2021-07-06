@@ -4,7 +4,8 @@
     <div class="p-col-12 p-md-3 p-fliud p-mb-3 p-mb-md-0">
       <FileUpload
         name="boatProfilePhoto"
-        showUploadButton="false"
+        :showUploadButton="false"
+        :showCancelButton="false"
         url="./upload"
         accept="image/*"
         :maxFileSize="6000000"
@@ -96,6 +97,7 @@ export default {
       unit: "",
       units: ["ft", "m"],
       submitReady: false,
+      boatProfilePhoto: "",
     };
   },
   methods: {
@@ -104,7 +106,8 @@ export default {
         name: this.boatName,
         make: this.make,
         model: this.model,
-        loa: this.loa + this.unit,
+        loa: this.loa,
+        loaUnits: this.unit,
         serial: this.hullNumber,
         year: this.year,
       };
@@ -120,6 +123,18 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
+        })
+        .then(() => {
+          this.boatName = "";
+          this.loa = "";
+          this.make = "";
+          this.model = "";
+          this.year = "";
+          this.hullNumber = "";
+          this.unit = "";
+          this.units = ["ft", "m"];
+          this.submitReady = false;
+          this.boatProfilePhoto = "";
         })
         .catch((error) => {
           console.error("ErrorLog:", error);
