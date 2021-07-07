@@ -16,7 +16,7 @@ const routes = [
     component: AddBoat
   },
   {
-    path: '/viewBoat',
+    path: '/viewBoat/:id',
     name: 'View Boat',
     component: ViewBoat
   },

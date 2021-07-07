@@ -16,10 +16,12 @@ export default {
         {
           label: "Home",
           icon: "pi pi-fw pi-home",
+          to: { name: "Home" },
         },
         {
           label: "About",
           icon: "pi pi-fw pi-info-circle",
+          to: { name: "About" },
         },
         {
           label: "Add New",
@@ -28,10 +30,12 @@ export default {
             {
               label: "Boat",
               icon: "pi pi-fw pi-plus",
+              to: { name: "Add Boat" },
             },
             {
               label: "Log",
               icon: "pi pi-fw pi-compass",
+              // to: { name: "Add Log" },
             },
           ],
         },
@@ -42,23 +46,24 @@ export default {
             {
               label: "Boats",
               icon: "pi pi-fw pi-align-left",
+              // to: { name: "View Boats" },
             },
             {
               label: "Logs",
               icon: "pi pi-fw pi-align-right",
-            },
-            {
-              seperator: true,
+              // to: { name: "View Logs" },
             },
             {
               label: "Advanced Search",
               icon: "pi pi-fw pi-align-right",
+              // to: { name: "Advanced Search" },
             },
           ],
         },
         {
           label: "Account",
           icon: "pi pi-fw pi-power-off",
+          // to: { name: "User" },
         },
       ],
     };

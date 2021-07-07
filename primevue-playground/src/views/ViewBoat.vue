@@ -7,27 +7,31 @@
     <div class="p-col-12 p-md-9">
       <div class="p-grid p-fluid">
         <!-- Boat Name -->
-        <div class="p-col-12 p-sm-6 p-mb-5">Boat Name:</div>
+        <div class="p-col-12 p-sm-6 p-mb-5">Boat Name: {{ data.name }}</div>
 
         <!-- Fix the margin issues here -->
         <!-- loa -->
-        <div class="p-d-flex p-col-12 p-sm-6 p-mb-5">Length:</div>
+        <div class="p-d-flex p-col-12 p-sm-6 p-mb-5">
+          Length: {{ `${data.loa}${data.unit ? data.unit : ""}` }}
+        </div>
       </div>
 
       <div class="p-grid p-fluid">
         <!-- Make -->
-        <div class="p-col-12 p-sm-6 p-mb-5">Make:</div>
+        <div class="p-col-12 p-sm-6 p-mb-5">Make: {{ data.make }}</div>
 
         <!-- Model -->
-        <div class="p-col-12 p-sm-6 p-mb-5">Model:</div>
+        <div class="p-col-12 p-sm-6 p-mb-5">Model: {{ data.model }}</div>
       </div>
 
       <div class="p-grid p-fluid">
         <!-- Year -->
-        <div class="p-col-12 p-sm-6 p-mb-5">Year:</div>
+        <div class="p-col-12 p-sm-6 p-mb-5">Year: {{ data.year }}</div>
 
         <!-- hull -->
-        <div class="p-field p-col-12 p-sm-6 p-mb-5">Hull Number:</div>
+        <div class="p-field p-col-12 p-sm-6 p-mb-5">
+          Hull Number: {{ data.serial }}
+        </div>
       </div>
     </div>
   </div>
@@ -37,20 +41,12 @@ export default {
   name: "ViewBoat",
   data() {
     return {
-      boatID: "",
-      boatName: "",
-      loa: "",
-      make: "",
-      model: "",
-      year: "",
-      hullNumber: "",
-      unit: "",
-      units: ["ft", "m"],
+      data: {},
     };
   },
   methods: {
-    fetchBoat: async function (id) {
-      fetch(`http://localhost:5000/boats/${id}`, {
+    fetchBoat: async function () {
+      fetch(`http://localhost:5000/boats/${this.$route.params.id}`, {
         method: "GET", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
@@ -58,20 +54,17 @@ export default {
       })
         .then((response) => response.json())
         .then((res) => {
-          this.boatName = res.boatName;
-          this.loa = res.loa;
-          this.make = res.make;
-          this.model = res.model;
-          this.year = res.year;
-          this.hullNumber = res.hullNumber;
-          this.unit = res.unit;
-          this.boatProfilePhoto = res.photo;
+          console.log(res);
+          this.data = res;
         })
         .catch((error) => {
           console.error("ErrorLog:", error);
         });
     },
   },
-  completed() {},
+  created() {
+    this.fetchBoat();
+    console.log(this.boatID);
+  },
 };
 </script>
