@@ -133,18 +133,7 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
-        })
-        .then(() => {
-          this.boatName = "";
-          this.loa = "";
-          this.make = "";
-          this.model = "";
-          this.year = "";
-          this.hullNumber = "";
-          this.unit = "";
-          this.units = ["ft", "m"];
-          this.submitReady = false;
-          this.boatProfilePhoto = "";
+          this.$router.push({ name: "View Boat", params: { id: data._id } });
         })
         .catch((error) => {
           console.error("ErrorLog:", error);
