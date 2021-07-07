@@ -46,7 +46,7 @@ export default {
             {
               label: "Boats",
               icon: "pi pi-fw pi-align-left",
-              // to: { name: "View Boats" },
+              to: { name: "View Boats" },
             },
             {
               label: "Logs",

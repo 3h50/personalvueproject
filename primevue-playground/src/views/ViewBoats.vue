@@ -1,7 +1,13 @@
 <template>
   <div>
-    <DataTable :value="boatList" responsiveLayout="scroll">
-      <Column field="name" header="Name"></Column>
+    <DataTable :value="boatList" responsiveLayout="stack" breakpoint="600px">
+      <Column field="name" header="Name">
+        <template #body="slotProps">
+          <router-link :to="`/viewBoat/${slotProps.data._id}`">{{
+            slotProps.data.name
+          }}</router-link>
+        </template>
+      </Column>
       <Column field="make" header="Make"></Column>
       <Column field="loa" header="Length"></Column>
     </DataTable>
