@@ -84,7 +84,7 @@ export default {
         flag: "USA",
         waypoints: [],
       },
-      flag: [1, 3, 9, 7],
+      flags: [1, 3, 9, 7],
     };
   },
   methods: {
