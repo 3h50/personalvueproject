@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <Header />
-    <router-view></router-view>
-    <MyFooter />
+  <div class="p-d-flex p-grid p-jc-center">
+    <div class="p-col-12" style="max-width: 960px">
+      <Header />
+      <router-view class="p-mb-5 p-col-12"></router-view>
+      <MyFooter class="p-col-12 p-text-center" />
+    </div>
   </div>
 </template>
 <script>
@@ -16,17 +18,3 @@ export default {
   },
 };
 </script>
-<style>
-body {
-  margin: 0;
-}
-
-#app {
-  height: 100vh;
-  display: flex;
-  max-width: 960px;
-  justify-content: center;
-  /* align-items: center; */
-  font-family: Arial;
-}
-</style>

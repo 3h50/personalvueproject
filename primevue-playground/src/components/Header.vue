@@ -1,6 +1,7 @@
 <template>
-  <div class="p-mb-5">
-    <Menubar :model="navItems" />
+  <div class="p-mb-5 p-grid">
+    <div class="p-col-12 p-text-center"><h1>SciffScribble</h1></div>
+    <Menubar :model="navItems" class="p-col-12" />
   </div>
 </template>
 <script>

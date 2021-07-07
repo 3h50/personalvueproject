@@ -1,5 +1,5 @@
 <template>
-  <div class="p-d-flex p-flex-column p-flex-md-row p-ai-center p-px-5">
+  <div class="p-d-flex p-flex-column p-flex-md-row p-ai-center">
     <!-- Photo Loader -->
     <div class="p-col-12 p-md-3 p-fliud p-mb-3 p-mb-md-0">
       <FileUpload
