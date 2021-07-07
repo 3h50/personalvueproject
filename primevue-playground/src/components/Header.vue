@@ -15,124 +15,50 @@ export default {
     return {
       navItems: [
         {
-          label: "File",
+          label: "Home",
+          icon: "pi pi-fw pi-power-off",
+        },
+        {
+          label: "About",
+          icon: "pi pi-fw pi-power-off",
+        },
+        {
+          label: "Add New",
           icon: "pi pi-fw pi-file",
           items: [
             {
-              label: "New",
+              label: "Boat",
               icon: "pi pi-fw pi-plus",
-              items: [
-                {
-                  label: "Bookmark",
-                  icon: "pi pi-fw pi-bookmark",
-                },
-                {
-                  label: "Video",
-                  icon: "pi pi-fw pi-video",
-                },
-              ],
             },
             {
-              label: "Delete",
-              icon: "pi pi-fw pi-trash",
-            },
-            {
-              separator: true,
-            },
-            {
-              label: "Export",
-              icon: "pi pi-fw pi-external-link",
+              label: "Log",
+              icon: "pi pi-fw pi-plus",
             },
           ],
         },
         {
-          label: "Edit",
+          label: "View",
           icon: "pi pi-fw pi-pencil",
           items: [
             {
-              label: "Left",
+              label: "Boats",
               icon: "pi pi-fw pi-align-left",
             },
             {
-              label: "Right",
+              label: "Logs",
               icon: "pi pi-fw pi-align-right",
             },
             {
-              label: "Center",
-              icon: "pi pi-fw pi-align-center",
+              seperator: true,
             },
             {
-              label: "Justify",
-              icon: "pi pi-fw pi-align-justify",
+              label: "Advanced Search",
+              icon: "pi pi-fw pi-align-right",
             },
           ],
         },
         {
-          label: "Users",
-          icon: "pi pi-fw pi-user",
-          items: [
-            {
-              label: "New",
-              icon: "pi pi-fw pi-user-plus",
-            },
-            {
-              label: "Delete",
-              icon: "pi pi-fw pi-user-minus",
-            },
-            {
-              label: "Search",
-              icon: "pi pi-fw pi-users",
-              items: [
-                {
-                  label: "Filter",
-                  icon: "pi pi-fw pi-filter",
-                  items: [
-                    {
-                      label: "Print",
-                      icon: "pi pi-fw pi-print",
-                    },
-                  ],
-                },
-                {
-                  icon: "pi pi-fw pi-bars",
-                  label: "List",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          label: "Events",
-          icon: "pi pi-fw pi-calendar",
-          items: [
-            {
-              label: "Edit",
-              icon: "pi pi-fw pi-pencil",
-              items: [
-                {
-                  label: "Save",
-                  icon: "pi pi-fw pi-calendar-plus",
-                },
-                {
-                  label: "Delete",
-                  icon: "pi pi-fw pi-calendar-minus",
-                },
-              ],
-            },
-            {
-              label: "Archieve",
-              icon: "pi pi-fw pi-calendar-times",
-              items: [
-                {
-                  label: "Remove",
-                  icon: "pi pi-fw pi-calendar-minus",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          label: "Quit",
+          label: "Account",
           icon: "pi pi-fw pi-power-off",
         },
       ],
