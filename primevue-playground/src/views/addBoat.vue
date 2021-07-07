@@ -133,6 +133,7 @@ export default {
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);
+          // this is super inneficient, need to pass back the data from create to the component rather than it refreshing.
           this.$router.push({ name: "View Boat", params: { id: data._id } });
         })
         .catch((error) => {

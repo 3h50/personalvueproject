@@ -64,7 +64,6 @@ export default {
   },
   created() {
     this.fetchBoat();
-    console.log(this.boatID);
   },
 };
 </script>
