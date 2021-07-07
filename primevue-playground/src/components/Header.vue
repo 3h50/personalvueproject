@@ -1,7 +1,6 @@
 <template>
   <div class="p-mb-5">
     <Menubar :model="navItems" />
-    <router-view />
   </div>
 </template>
 <script>
@@ -16,15 +15,15 @@ export default {
       navItems: [
         {
           label: "Home",
-          icon: "pi pi-fw pi-power-off",
+          icon: "pi pi-fw pi-home",
         },
         {
           label: "About",
-          icon: "pi pi-fw pi-power-off",
+          icon: "pi pi-fw pi-info-circle",
         },
         {
           label: "Add New",
-          icon: "pi pi-fw pi-file",
+          icon: "pi pi-fw pi-plus",
           items: [
             {
               label: "Boat",
@@ -32,7 +31,7 @@ export default {
             },
             {
               label: "Log",
-              icon: "pi pi-fw pi-plus",
+              icon: "pi pi-fw pi-compass",
             },
           ],
         },

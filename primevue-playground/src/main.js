@@ -10,8 +10,7 @@ import 'primevue/resources/themes/bootstrap4-light-blue/theme.css'
 import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css';
 
-const app = createApp(App);
-app.use(PrimeVue);
-app.use(router);
-
-app.mount("#app");
+createApp(App)
+    .use(router)
+    .use(PrimeVue)
+    .mount("#app");
