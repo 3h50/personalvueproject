@@ -1,17 +1,21 @@
 <template>
   <div>
-    <TopNav />
+    <Header />
     <router-view />
-    <ViewBoat />
+    <Footer />
   </div>
 </template>
 <script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 export default {
   name: "App",
-  components: {},
+  components: {
+    Header,
+    Footer,
+  },
 };
 </script>
-
 <style>
 body {
   margin: 0;

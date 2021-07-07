@@ -84,8 +84,18 @@
   </div>
 </template>
 <script>
+import InputText from "primevue/inputtext";
+import Dropdown from "primevue/dropdown";
+import Button from "primevue/button";
+import FileUpload from "primevue/fileupload";
 export default {
   name: "AddBoat",
+  components: {
+    InputText,
+    Dropdown,
+    Button,
+    FileUpload,
+  },
   data() {
     return {
       boatName: "",
