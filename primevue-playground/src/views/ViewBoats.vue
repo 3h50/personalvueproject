@@ -3,7 +3,13 @@
     <DataTable :value="boatList" responsiveLayout="stack" breakpoint="500px">
       <Column field="_id" header="Avatar">
         <template #body="slotProps">
-          <Avatar :img="`/boatImg/${slotProps.data._id}.jpg`" shape="circle" />
+          <!-- <Avatar :img="`/boatImg/${slotProps.data._id}.jpg`" shape="circle" /> -->
+          <Avatar
+            image="/images/sail.jpg"
+            shape="circle"
+            size="large"
+            :blah="`/boatImg/${slotProps.data._id}.jpg`"
+          />
         </template>
       </Column>
       <Column field="name" header="Name">
