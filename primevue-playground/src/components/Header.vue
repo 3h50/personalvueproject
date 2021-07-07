@@ -33,11 +33,6 @@ export default {
               icon: "pi pi-fw pi-plus",
               to: { name: "Add Boat" },
             },
-            {
-              label: "Log",
-              icon: "pi pi-fw pi-compass",
-              // to: { name: "Add Log" },
-            },
           ],
         },
         {

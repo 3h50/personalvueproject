@@ -19,6 +19,13 @@
           }}</router-link>
         </template>
       </Column>
+      <Column field="addLog">
+        <template #body="slotProps">
+          <router-link :to="`/addLog/${slotProps.data._id}`"
+            >Add Log</router-link
+          >
+        </template>
+      </Column>
       <Column field="year" header="Year"></Column>
       <Column field="make" header="Make"></Column>
       <Column field="model" header="Model"></Column>

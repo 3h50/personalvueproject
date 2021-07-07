@@ -4,6 +4,7 @@ import AddBoat from '../views/AddBoat.vue'
 import ViewBoat from '../views/ViewBoat.vue'
 import ViewBoats from '../views/ViewBoats.vue'
 import About from '../views/About.vue'
+import AddLog from '../views/AddLog.vue'
 
 const routes = [
   {
@@ -15,6 +16,11 @@ const routes = [
     path: '/addBoat',
     name: 'Add Boat',
     component: AddBoat
+  },
+  {
+    path: '/addLog/:anotherid',
+    name: 'Add Log',
+    component: AddLog
   },
   {
     path: '/viewBoats',
