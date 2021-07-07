@@ -8,7 +8,9 @@
           }}</router-link>
         </template>
       </Column>
+      <Column field="year" header="Year"></Column>
       <Column field="make" header="Make"></Column>
+      <Column field="model" header="Model"></Column>
       <Column field="loa" header="Length"></Column>
     </DataTable>
   </div>
@@ -38,7 +40,6 @@ export default {
       })
         .then((response) => response.json())
         .then((res) => {
-          console.log(res);
           this.boatList = res;
         })
         .catch((error) => {

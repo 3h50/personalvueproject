@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <Header />
     <router-view></router-view>
     <MyFooter />
@@ -24,8 +24,9 @@ body {
 #app {
   height: 100vh;
   display: flex;
+  max-width: 960px;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   font-family: Arial;
 }
 </style>

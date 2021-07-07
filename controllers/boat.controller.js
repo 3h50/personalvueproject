@@ -11,9 +11,12 @@ router.route('/new').post((req, res) => {
 
 router.route('/').get((req, res) => {
   // using .find() without a parameter will match on all user instances
-  Boat.find()
+  Boat.find({}, "-serial -overhaulDate -owners -companies")
     .then(allBoats => res.json(allBoats))
-    .catch(err => res.status(400).json('Error! ' + err))
+    .catch(err => {
+      res.status(400).json('Error! ' + err)
+      console.log(err)
+    })
 })
 
 router.route('/:id').put((req, res) => {
