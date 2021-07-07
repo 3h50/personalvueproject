@@ -2,7 +2,7 @@
   <div class="p-d-flex p-grid p-jc-center">
     <div class="p-col-12" style="max-width: 960px">
       <Header />
-      <router-view class="p-mb-5 p-col-12"></router-view>
+      <router-view class="p-mb-2 p-col-12"></router-view>
       <MyFooter class="p-col-12 p-text-center" />
     </div>
   </div>

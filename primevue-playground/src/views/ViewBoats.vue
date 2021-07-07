@@ -1,6 +1,11 @@
 <template>
   <div>
-    <DataTable :value="boatList" responsiveLayout="stack" breakpoint="600px">
+    <DataTable :value="boatList" responsiveLayout="stack" breakpoint="500px">
+      <Column field="_id" header="Avatar">
+        <template #body="slotProps">
+          <Avatar :img="`/boatImg/${slotProps.data._id}.jpg`" shape="circle" />
+        </template>
+      </Column>
       <Column field="name" header="Name">
         <template #body="slotProps">
           <router-link :to="`/viewBoat/${slotProps.data._id}`">{{
@@ -18,12 +23,14 @@
 <script>
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
+import Avatar from "primevue/avatar";
 
 export default {
   name: "ViewBoats",
   components: {
     DataTable,
     Column,
+    Avatar,
   },
   data() {
     return {
