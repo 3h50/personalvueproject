@@ -1,18 +1,14 @@
 <template>
   <div>
     <TopNav />
-    <AddBoat />
+    <router-view />
+    <ViewBoat />
   </div>
 </template>
 <script>
-import AddBoat from "./components/addBoat.vue";
-import TopNav from "./components/TopNav.vue";
 export default {
   name: "App",
-  components: {
-    AddBoat,
-    TopNav,
-  },
+  components: {},
 };
 </script>
 
